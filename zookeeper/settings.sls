@@ -28,8 +28,7 @@
 # This tells the state whether or not to restart the service on configuration change
 {%- set restart_on_change = p.get('restart_on_config', 'True') %}
 
-# bind_address is only supported as a grain, because it has to be host-specific
-{%- set bind_address      = gc.get('bind_address', '') %}
+{%- set bind_address      = gc.get('bind_address', pc.get('bind_address', '')) %}
 
 {%- set data_dir          = gc.get('data_dir', pc.get('data_dir', '/var/lib/zookeeper/data')) %}
 {%- set port              = gc.get('port', pc.get('port', '2181')) %}
