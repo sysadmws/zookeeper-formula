@@ -3,6 +3,8 @@ Description=Apache Zookeeper
 After=network.target
 
 [Service]
+RuntimeDirectory=zookeeper
+RuntimeDirectoryMode=0750
 User=zookeeper
 Group=zookeeper
 SyslogIdentifier=zookeeper
